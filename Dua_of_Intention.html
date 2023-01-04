@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<meta name="description" content="Doa pembuka">
+		<title>Dalail Al Khayrat - Dua of Intention</title>
+		<link rel="shortcut icon" href="assets/images/DK_logo.png" type="image/x-icon">
+		<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="assets/socicon/css/styles.css">
+		<link rel="stylesheet" href="assets/tether/tether.min.css">
+		<link rel="stylesheet" href="assets/animatecss/animate.min.css">
+		<link rel="stylesheet" href="assets/dropdown/css/style.css">
+		<link rel="stylesheet" href="assets/theme/css/style.css">
+		<link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+		<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+		<!-- Docs styles -->
+		<link rel="stylesheet" href="assets/dist/demo/dist/demo.css" />
+		<link rel="stylesheet" href="assets/main_v12.css">
+
+
+		<script src="assets/js/jquery-3.5.1.min.js"></script>
+		<script>
+			function playTranscript() {
+				var dialogueTimings = [],
+				dialogues = document.querySelectorAll('#MyP>p.arabicText'),
+				transcriptWrapper = document.querySelector('#transcriptWrapper'),
+				audio = document.querySelector('#player'),
+				previousDialogueTime = -1;
+
+				var currentDialogueTime = Math.max.apply(Math, dialogueTimings.filter(function (v) {
+					return v <= audio.currentTime
+				}));
+
+				if (previousDialogueTime !== currentDialogueTime) {
+					previousDialogueTime = currentDialogueTime;
+					var currentDialogue = dialogues[dialogueTimings.indexOf(currentDialogueTime)];
+					transcriptWrapper.scrollTop = currentDialogue.offsetTop - 50;
+					var previousDialogue = document.getElementsByClassName('speaking')[0];
+					if (previousDialogue !== undefined) previousDialogue.className = previousDialogue.className.replace('speaking', '');
+					currentDialogue.className += ' speaking';
+				}
+			};
+		</script>
+		<script>
+			function playFrom(t){
+				myAudio=document.getElementById('player');
+				myAudio.currentTime = t;
+				myAudio.play();
+			};
+		</script>
+	</head>
+	<body onmousedown="return false" onselectstart="return false">
+		<style>
+            .progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #ad586d;
+  width: 0%;
+}
+            
+            .progress-container.dark-mode {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar.dark-mode {
+  height: 8px;
+  background: #ad586d !important;
+  width: 0%;
+}
+            
+			.dark-mode {
+				background-color: #424242 !important;
+				color: white !important;
+			}
+			a.dark-mode:hover {
+				color: #999999 !important;
+			}
+			.btn-primary.dark-mode {
+				border-color: #ffffff !important;
+			}
+
+			.btn-primary.dark-mode:hover {
+				border-color: transparent !important;
+			}
+			.nav-item.dark-mode a:hover {
+				color: #999999 !important;
+			}
+			.hamburger span.dark-mode {
+				background-color: #ffffff !important;
+			}
+			.navbar-toggler.dark-mode:hover span {
+				background-color: #999999 !important;
+			}
+			.fa {
+				margin: 0;
+				position: fixed;
+				
+				top: 31px;
+				color: #4a5764;
+				border: 1px solid #ccc !important;
+				border-radius: 10px;
+				box-shadow: 0px 4px 10px rgb(0 0 0 / 33%);
+				padding:4px 1px 4px 4px;
+				background: #F8F8F8	;
+				z-index: 9999;
+				left: 94%;
+				cursor: pointer;
+				transform: translate(-50%, -50%);
+				font-size: 22px;
+			}
+
+			.fa:hover {
+				color: #fff;
+				box-shadow: 0px -4px 10px rgb(0 0 0 / 33%);
+				background: #ccc;
+			}
+			.fa.dark-mode {
+				margin: 0;
+				position: fixed;
+				top: 31px;
+				color: #4a5764 !important;
+				border: 1px solid #ccc !important;
+				border-radius: 10px;
+				box-shadow: 0px 4px 10px rgb(255 255 255 / 33%) !important;
+				padding:4px 1px 4px 4px;
+				background: #F8F8F8 !important;
+				z-index: 9999;
+				left: 94%;
+				cursor: pointer;
+				transform: translate(-50%, -50%);
+				font-size: 22px;
+			}
+
+			.fa.dark-mode:hover {
+				color: #fff !important;
+				box-shadow: 0px -4px 10px rgb(255 255 255 / 33%) !important;
+				background: #ccc !important;
+			}
+		</style>
+		<script>
+		$(document).ready(function() {
+			var darkmode = JSON.parse(localStorage.getItem("darkmode"));
+			if (darkmode) {
+				$('body > *').not('.modal').not('.modal *').not('.langSettings').not('.langSettings *').not('.hamburger').not('.icon-custom').addClass("dark-mode");
+				$('body > * *').not('.modal').not('.modal *').not('.langSettings').not('.langSettings *').not('.hamburger').not('.icon-custom').addClass("dark-mode");
+				$('.langSettings').addClass("dark-mode");
+				setTimeout(function() {$('.plyr *').addClass("dark-mode")}, 500);
+				$('.dark-mode-toggler').prop('checked', true);
+			}
+
+			// Dark Mode Toggler
+			$('.dark-mode-toggler').click(function () {
+				if ($(this).is(':checked')) {
+					$('body > *').not('.modal').not('.modal *').not('.langSettings').not('.langSettings *').not('.hamburger').not('.icon-custom').addClass("dark-mode");
+					$('body > * *').not('.modal').not('.modal *').not('.langSettings').not('.langSettings *').not('.hamburger').not('.icon-custom').addClass("dark-mode");
+					$('.langSettings').addClass("dark-mode");
+					localStorage.setItem("darkmode", true);
+				} else {
+					$('.dark-mode').removeClass("dark-mode");
+					localStorage.setItem("darkmode", false);
+				}
+			});
+		});
+		</script>
+ <script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+
+		<style>
+			.navbar-toggler:hover span {
+				background-color: #800020  !important;
+			}
+			.icon-mosque {
+				background-image: url('data:img/svg;');
+				background-size: 100%;
+				height: 20px;
+				width: 17px;
+				display: inline-block !important;
+			}
+
+			a:hover .icon-mosque {
+				filter: invert(0.3);
+			}
+
+			.dark-mode .icon-mosque {
+				filter: invert(1) !important;
+			}
+
+			a.dark-mode:hover > .icon-mosque {
+				filter: invert(0.61) !important;
+			}
+		</style>
+
+		<section class="menu cid-s4rX0tVglS" once="menu" id="menu2-7">
+			<nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top collapsed bg-color transparent">
+				
+				<div class="menu-logo">
+					<div class="navbar-brand">
+						<span class="navbar-caption-wrap" style="margin-top:0px;"><a class="navbar-caption text-black display-4" href=""><span class="icon-custom icon-mosque"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dua of Intention - <font size="5" face="Islamic"><b> دعاء النية</font></b></a></span>
+					</div>
+				</div>
+
+                  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+			</nav>
+		</section>
+		<!-- Modal -->
+		<!-- The Modal -->
+		<div class="modal langSettingsModal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header" style="height: 50px;">
+					<h4>Settings</h4>
+					<span class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+					<button class="accordion active">Appearance</button>
+					<div class="panel" style="text-align: center; max-height: 44px;">
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="dark-mode-toggler" type="checkbox">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center; white-space: nowrap;">
+								<h5>Dark Mode</h5>
+							</div>
+						</div>
+					</div>
+					<button class="accordion active">Translations</button>
+					<div class="panel" style="text-align: center ; max-height: 415px;">
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="translitCheck" data-classes="translit">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>Transliteration</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="transCheckID" data-classes="transID">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>Bahasa</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="transCheck" data-classes="trans">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>English</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="transCheckFA" data-classes="transFA">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>Farsi</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="transCheckFR" data-classes="transFR">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>French</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="switch">
+									<input class="translation-checkbox" type="checkbox" id="transCheckUR" data-classes="transUR">
+									<span class="toggle"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>Urdu</h5>
+							</div>
+						</div>
+					</div>
+					<button class="accordion active">Font sizes</button>
+					<div class="panel" style="text-align: center; max-height: 92px;">
+						<div class="row">
+							<div class="column left">
+								<h5 id="button2" value="smaller" class="changeFontSize" data-lang="Arabic" data-increment="minus"> &#8854;&nbsp;&nbsp;&nbsp;</h5>
+							</div>
+							<div class="column middle" style="vertical-align: middle;">
+								<h5>Arabic 
+                                <!--    <span class="arabicFontSize fontSize"></span> -->
+                                </h5>
+							</div>
+							<div class="column right">
+								<h5 id="button1" value="larger" class="changeFontSize" data-lang="Arabic" data-increment="plus">&nbsp;&nbsp;&nbsp;&#8853;</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<h5 id="button4" value="smaller" class="changeFontSize" data-lang="Others" data-increment="minus">&#8854;&nbsp;&nbsp;&nbsp;</h5>
+							</div>
+							<div class="column middle">
+								<h5>Translation 
+                                <!--    <span class="englishFontSize fontSize"></span> -->
+                                </h5>
+							</div>
+							<div class="column right">
+								<h5 id="button3" value="larger" class="changeFontSize" data-lang="Others" data-increment="plus">&nbsp;&nbsp;&nbsp;&#8853;</h5>
+							</div>
+						</div>
+					</div>
+					<button class="accordion active">Arabic font style</button>
+					<div class="panel" style="text-align: center; max-height: 92px;">
+						<div class="row">
+							<div class="column left">
+								<label class="container" >
+									<input type="radio" name="radio" class="changeArabicFont" value="Islamic">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>Uthmani</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column left">
+								<label class="container">
+									<input type="radio" name="radio" class="changeArabicFont" value="Indopak">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="column middle" style="text-align: center;">
+								<h5>IndoPak</h5>
+							</div>
+						</div>
+					</div> 
+				</div>
+				<div class="modal-footer" style="height: 20px;"></div>
+			</div>
+		</div>
+		<!-- Trigger/Open The Modal -->
+		<p class = "fa fa-gear langSettings">&nbsp;</p>
+		<!-- Page header for each individual part ============================================ -->
+		<!--  Dua of Intention -->
+		<h1></h1>
+		<div class="part">
+			<h3 dir="ltr"></h3>
+		</div>
+		
+		
+<div id="MyP" translate="no">
+				<p class="lang arabicText" lang="ar" dir=""><span>اللَّهُمَّ</span> إِنِّي نَوَيْتُ بِالصَّلَاةِ عَلَى النَّبِيِّ صَلَّى اللهُ عَليْهِ وَسَلَّمَ، امْتِثَالَاً لِأَمْرِكَ، وَتَصْدِيقَاً لِنَبِيِّكَ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللهُ عَليْهِ وَسَلَّمَ، وَمَحَبَّةً فِيهِ، وَشَوْقَاً إِلَيْهِ، وَتَعْظِيمَاً لِقَدْرِهِ، وَلِكَونِهِ أَهْلَاً لِذَلِكَ. فَتَقَبَّلْهَا مِنِّي بِفَضْلِكَ وَإِحْسَانِكَ. وَأَزِلْ حِجَابَ الغَفْلَةِ عَنْ قَلْبِي وَاجْعَلْنِي مِنْ عِبَادِكَ الصَّالِحِينَ.</p>
+				<p class="lang translit" style="display: none;" lang="en" dir="ltr"><span>Allāhumma </span>innī nawaytu biṣṣalāti ʿalān nabiyyi ṣallAllāhu ʿalayhi wasallama, imtithālan li amrika wa taṣdīqan linabiyyika sayyidinā Muḥammadin ṣallAllāhu ʿalayhi wasallama, wa maḥabbatan fīhi, wa shawqan ilayhi, wa taʿẓīman liqadrihi wa likawnihi ahlan lidhalika, fataqabbalhā minnī bifaḍlika wa iḥsānika, wa ʾazil ḥijābal ghaflati ʿan qalbī wajʿalnī min ʿibādikaṣ ṣāliḥīn.</p>
+				<p class="lang transID" style="display: none;" lang="id" dir="ltr">Ya Allah aku berniat dengan bershalawatku atas Nabi SAW karena mengikuti perintah-Mu dan membenarkan pada Nabi-Mu yaitu Muhammad SAW, semata-mata karena aku cinta dan rindu beliau SAW dan mengagungkan derajat beliau. Oleh karena itu terimalah ya Allah dariku ini, dengan anugerah-Mu dan Kebaikan-Mu. Dan hilangkanlah Ya Allah, dinding kelupaan dari hatiku. Dan jadikanlah aku dari golongan hamba-Mu yang sholeh-sholeh.</p>
+				<p class="lang trans" style="display: none;" lang="en" dir="ltr"><span>O Allah! </span>I intend to ask for blessings upon on the Prophet sallAllahu alayhi wasallam, in obedience to Your command and with faith in Your Prophet, Sayyidina Muhammad sallAllahu alayhi wasallam. [I do so] with love for him and yearning for him, and exalting his rank as he merits. So accept it from me by Your favour and benevolence, and remove the veil of neglect from my heart and make me one of Your righteous slaves.</p>
+				<p class="lang transFA" style="display: none;" lang="fa" dir="rtl">خدایا بتحقیق من ؐقصد کرده ام با اطاعت از امر تو و با ایمان به پیامبرت، سیدنا محمد صلی‌الله‌علیه‌وآله‌وسلم بر پیامبر صلی‌الله‌علیه‌وآله‌وسلم درود بفرستم. [این کار را انجام می دهم] با محبت او و اشتیاق به او و درجات او  بلند می کن چون او را به شایسته این است پس به لطف و احسان خود آن را از من بپذیر و پرده غفلت را از دلم بگشا و دور بفرما و مرا از بندگان صالحت قرار ده.</p>
+				<p class="lang transFR" style="display: none;" lang="fr" dir="ltr"><span>Ô Allah </span>, je manifeste l'intention de prier sur le prophète - Prière d'Allah et son Salut sur lui - , obéissant à ton ordre, approbant ton prophète Mohammad - Prière d'Allah et son Salut sur lui - , par amour pour lui et exaltant sa valeur car il en est digne. Accepte cette prière de moi, par ta générosité et ta bonté, ote de mon coeur le voile de la distraction, et considère moi comme un de tes serviteurs vertueux.</p>
+				<p class="lang transUR" style="display: none;" lang="ur" dir="rtl">ای الله! میں نبی کریم صلی الله علیه وسلم پر درود بھیجنی کا اراده رکھتا هوں، آپ کی حکم کی تعمیل میں اور آپ کی نبی سیدنا محمد صلی الله علیه وسلم پر ایمان کی ساتھ۔(میں ایسا کرتا هوں) اُن کی لئی محبت اور اُن کی لئی تڑپ کی ساتھ، اور اُن کی درجات کو بلند کرتا هوں کیونکه وه قابل هیں۔ تو اسی اپنی فضل و کرم سی میری طرف سی قبول فرما اور میری دل سی غفلت کا پرده هٹا اور مجھی اپنی نیک بندوں میں سی بنا۔</p>
+				<p class="lang arabicText" lang="ar" dir=""><span>اللَّهُمَّ</span> زِدْهُ شَرَفَاً عَلَى شَرَفِهِ الَّذِي أَولَيْتَهُ، وَعِزَّاً عَلَى عِزِّهِ الَّذِي أَعْطَيْتَهُ، وَنُورَاً عَلَى نُورِهِ الَّذِي مِنْهُ خَلَقْتَهُ، وَأَعْلِ مَقَامَهُ فِي مَقَامَاتِ المُرْسَلِينَ وَدَرَجَتَهُ فِي دَرَجَاتِ النَّبِيِّينَ.</p>
+				<p class="lang translit" style="display: none;" lang="en" dir="ltr"><span>Allāhumma</span> zidhu sharafan ʿalā sharafihil ladhī awlaytahu, waʿizzan ʿalā ʿizzihil ladhī aʿṭaytahu, wa nūran ʿalā nūrihil ladhī minhu khalaqtahu, wa aʿli maqāmahu fi maqāmātil mursalīna, wa darajatahu fī darajātin nabiyyīn.</p>
+				<p class="lang transID" style="display: none;" lang="id" dir="ltr">Ya Allah, tingkatkanlah derajat beliau diatas derajatnya yang telah Engkau jaga dan keagungan beliau diatas keagungan yang telah engkau anugerahi. Dan cahaya diatas cahayaNya, dimana dari cahaya itu Engkau menciptakan beliau SAW. Angkatlah maqam/kedudukan beliau sejajar kedudukan para Rasul dan derajat beliau sejajar dengan derajat para Nabi.</p>
+				<p class="lang trans" style="display: none;" lang="en" dir="ltr"><span>O Allah! </span>Increase him in honour above the honour which You have given him, and with might beyond the might which You have given him, and give him a light beyond his light from which You created. Elevate his station among the stations of the Messengers, and his rank among the ranks of the Prophets.</p>
+				<p class="lang transFA" style="display: none;" lang="fa" dir="rtl">خدایا زیاده کن اورا بزرگی بر بزرگی او که اورا عطا کردۂ و عزت بر عزت او که بخشیدۂ اورا و نور بر نور او که از ان تو پیدا کردۂ اورا و بلند کن مقام او در مقام های پیغمبران و مرتبۂ او در مرتبه های نبیان.</p>
+				<p class="lang transFR" style="display: none;" lang="fr" dir="ltr"><span>Ô Allah </span>, accorde lui d'avantage de noblesse, d'avantage d'honneur de puissance, et une lumière sur, la lumière de laquelle tu l'as crée. Elève son grade parmi ceux des Envoyés et son rang parmi les rangs des Prophètes.</p>
+				<p class="lang transUR" style="display: none;" lang="ur" dir="rtl">ای الله! اُن کی عزت میں اضافه فرما، اُس عزت سی بڑھ کر جو تو نی اُنهیں عطا کی هی، اور اُس عظمت سی بڑھ کر جو تُو نی اُنهیں عطا کی هی، اور اُنهیں اُن کی نور سی بڑھ کر ایک نور عطا فرما جس سی تو نی پیدا کیا هی۔ اُن کی مقام کو رسولوں کی مقام میں اور اُن کی درجات کو انبیاء کی درجات میں بلند فرما۔</p>
+				<p class="lang arabicText" lang="ar" dir="">وَأَسْألُكَ رِضَاكَ وَرِضَاهُ يَا رَبَّ العَالَمِينَ مَعَ العَافِيَةِ الدَّائِمَةِ وَالمَوْتِ عَلَى الكِتَابِ وَالسُّنَّةِ وَالجَمَاعَةِ وَكَلِمَتَيْ الشَّهَادَةِ عَلَى تَحْقِيقِهَا مِنْ غَيْرِ تَبْدِيلٍ وَلَا تَغْيِيرٍ.  وَاغْفِرْ لِي مَا ارْتَكَبْتُهُ بِفَضْلِكَ وَجُودِكَ وَكَرَمِكَ يَا أَرْحَمَ الرَّاحِمِينَ. وَصَلَّى اللهُ عَلَى سَيِّدِنَا مُحَمَّدٍ خَاتِمِ النَّبِيِّينَ وَإِمَامِ المُرْسَلِينَ وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ وَسَلَامٌ عَلَى المُرْسَلِينَ وَالحَمْدُ للهِ رَبِّ العَالَمِينَ.</p>
+				<p class="lang translit" style="display: none;" lang="en" dir="ltr">Wa asʾaluka riḍāka wariḍāhu yā rabbal ʿālamīna maʿal ʿāfiyatid dāʾimati wal mawti ʿalāl kitābi was sunnati wal jamāʿati wa kalimatayyish shahādati ʿalā taḥqīqihā min ghayri tabdīlin wa lā taghyīrin, waghfirlī mārtakabtuhu bifaḍlika wajūdika wakaramika yā arḥamar rāḥimīna, wa ṣallAllāhu ʿalā sayyidinā Muḥammadin khātimin nabiyyīna wa imāmil mursalīna wa ʿalā ālihi waṣaḥbihi ajmaʿīna wasalāmun ʿalāl mursalīna walḥamdu liLlāhi rabbil ʿālamīn.</p>
+				<p class="lang transID" style="display: none;" lang="id" dir="ltr">Dan aku memohon kepada Engkau, Ridho Engkau dan Ridho Beliau SAW. Wahai Tuhan penguasa seluruh alam, dalam keadaan sehat walafiat yang sempurna dan meninggal diatas petunjuk Al Qur'an dan As Sunnah Waljama'ah, Kalimat Syahadat yang murni dan hakiki tanpa diganti dan berubah-ubah. Ampunilah kami dari apa yang kami perbuat dengan anugerah-Mu dan pemberian-Mu serta kemuliaan-Mu wahai Tuhan yang Maha Penyayang diantara para penyayang. Mudah-mudahan Rahmat Allah senantiasai terlimpah atas baginda Nabi Muhammad, Keluarga dan sahabat seluruhnya.</p>
+				<p class="lang trans" style="display: none;" lang="en" dir="ltr">I ask You for Your pleasure, and his gratification, O Lord of the Worlds, and perpetual well-being, and a death in obedience to The Book and the Sunnah, with fulfillment of my shahadah without alteration. Forgive me, by Your favour, bounty and generosity, for what I have done, O Most Merciful of the merciful. May Allah bless Sayyidina Muhammad, the Seal of the Prophets and Imam of the Messengers, and his family and all his Companions, and grant them peace. Peace be upon the Messengers, and praise be to Allah, the Lord of the Worlds.</p>
+				<p class="lang transFA" style="display: none;" lang="fa" dir="rtl">و سوال می کنم از تو خوشنووی تو و خوشنووی او. ای پروردگار عالمیان با عافیت همیشه و موت بر اتباع قرآن مجمید و مذهب سنت و جماعت و کلمۂ شهادت بر تحقیق او بدون بدل کردن و تغیر. و آمیزش کن برای ماچیزی که کرده ام از گناه بفضل خود و بخشش خود و مهربانی خود ای مهربان تر برهمه مهربانان۔ و درود فرستد خدا تعالیٰ بر سردار ما محمد و بر اولاد او و یاران او سلام فرستد سلام و همه ثنا برای خدای پروردگار عالم هاست</p>
+				<p class="lang transFR" style="display: none;" lang="fr" dir="ltr">Je te demande ton agrément et le sien, Ô Seigneur des Univers, accompagné de la santé perpétuelle et la mort accroché au Coran, à la Sounna, au groupe et aux paroles de la Chahada, comme il se doit, sans changement ou modification; et ton pardon pour les pêchés que j'ai commis, par ta générosité et ta noblesse, Ô le plus Miséricordieux des Miséricordieux. Prière d'Allah et son Salut sur Saïdina Mohammad sceau des prophètes et Imam des envoyés, sur sa famille et tous ses compagnons et Salut sur les Envoyés; grâce à Allah Seigneur des Univers.</p>
+				<p class="lang transUR" style="display: none;" lang="ur" dir="rtl">میں تجھ سی  سوال کرتا هوں تیری رضا اور اٗن کی خوشنووی کا، ای رب العالمین، اور دائمی عافیت، اور کتاب و سنت کی اطاعت میں موت، بغیر کسی تبویلی کی میری شهادت کی تکمیل کی ساتھ۔ میری اپنی فضل، کرم اور سخاوت سی بخشش فرما وی، میں نی جو کچھ کیا هی، ای سب سی زیاده رحم کرنی والی۔ الله تعالیٰ سیدنا محمد، خاتم النبیین اور رسولوں کی امام، اور ان کی آل اور تمام صحابه کرام پر رحمتیں نازل فرمائی اور اُن پر سلامتی نازل فرمائی۔ سلامتی هو رسولوں پر اور تمام تعریفیں الله کی لیی هیں جو رب العالمین هی۔</p>
+			 
+		</div>
+</div>		
+		
+		
+
+
+		
+		
+
+		<input name="animation" type="hidden">
+		<script src="assets/web/assets/jquery/jquery.min.js"></script>
+		<script src="assets/popper/popper.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/smoothscroll/smooth-scroll.js"></script>
+		<script src="assets/tether/tether.min.js"></script>
+		<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+		<script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+		<script src="assets/dropdown/js/nav-dropdown.js"></script>
+		<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+		<script src="assets/theme/js/script.js"></script>
+		<script src="assets/js/scripts_v05.js"></script>
+		<!--<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div> -->
+	</body>
+</html>
